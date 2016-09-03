@@ -170,46 +170,25 @@ System.register("angular2-logger/app/core/logger", ["@angular/core", "angular2-l
         }
     }
 });
-System.register("angular2-logger/core", ["@angular/core", "angular2-logger/app/core/logger", "angular2-logger/app/core/level"], function(exports_4, context_4) {
+System.register("angular2-logger/core", ["angular2-logger/app/core/level", "angular2-logger/app/core/logger"], function(exports_4, context_4) {
     "use strict";
     var __moduleName = context_4 && context_4.id;
-    var core_2, logger_1, level_2;
-    var OFF_LOGGER_PROVIDERS, ERROR_LOGGER_PROVIDERS, WARN_LOGGER_PROVIDERS, INFO_LOGGER_PROVIDERS, DEBUG_LOGGER_PROVIDERS, LOG_LOGGER_PROVIDERS;
-    var exportedNames_1 = {
-        'OFF_LOGGER_PROVIDERS': true,
-        'ERROR_LOGGER_PROVIDERS': true,
-        'WARN_LOGGER_PROVIDERS': true,
-        'INFO_LOGGER_PROVIDERS': true,
-        'DEBUG_LOGGER_PROVIDERS': true,
-        'LOG_LOGGER_PROVIDERS': true
-    };
     function exportStar_1(m) {
         var exports = {};
         for(var n in m) {
-            if (n !== "default"&& !exportedNames_1.hasOwnProperty(n)) exports[n] = m[n];
+            if (n !== "default") exports[n] = m[n];
         }
         exports_4(exports);
     }
     return {
         setters:[
-            function (core_2_1) {
-                core_2 = core_2_1;
+            function (level_2_1) {
+                exportStar_1(level_2_1);
             },
             function (logger_1_1) {
-                logger_1 = logger_1_1;
                 exportStar_1(logger_1_1);
-            },
-            function (level_2_1) {
-                level_2 = level_2_1;
-                exportStar_1(level_2_1);
             }],
         execute: function() {
-            exports_4("OFF_LOGGER_PROVIDERS", OFF_LOGGER_PROVIDERS = [core_2.provide(logger_1.Options, { useValue: { level: level_2.Level.OFF } }), logger_1.Logger]);
-            exports_4("ERROR_LOGGER_PROVIDERS", ERROR_LOGGER_PROVIDERS = [core_2.provide(logger_1.Options, { useValue: { level: level_2.Level.ERROR } }), logger_1.Logger]);
-            exports_4("WARN_LOGGER_PROVIDERS", WARN_LOGGER_PROVIDERS = [core_2.provide(logger_1.Options, { useValue: { level: level_2.Level.WARN } }), logger_1.Logger]);
-            exports_4("INFO_LOGGER_PROVIDERS", INFO_LOGGER_PROVIDERS = [core_2.provide(logger_1.Options, { useValue: { level: level_2.Level.INFO } }), logger_1.Logger]);
-            exports_4("DEBUG_LOGGER_PROVIDERS", DEBUG_LOGGER_PROVIDERS = [core_2.provide(logger_1.Options, { useValue: { level: level_2.Level.DEBUG } }), logger_1.Logger]);
-            exports_4("LOG_LOGGER_PROVIDERS", LOG_LOGGER_PROVIDERS = [core_2.provide(logger_1.Options, { useValue: { level: level_2.Level.LOG } }), logger_1.Logger]);
         }
     }
 });
