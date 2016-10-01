@@ -31,7 +31,7 @@ var Logger = (function () {
     function Logger(options) {
         var _this = this;
         this.Level = level_1.Level;
-        this._loadLevel = function () { return localStorage.getItem(_this._storeAs); };
+        this._loadLevel = function () { return JSON.parse(localStorage.getItem(_this._storeAs)); };
         this.global = function () { return window[_this._globalAs] = _this; };
         this.isErrorEnabled = function () { return _this.level >= level_1.Level.ERROR; };
         this.isWarnEnabled = function () { return _this.level >= level_1.Level.WARN; };
