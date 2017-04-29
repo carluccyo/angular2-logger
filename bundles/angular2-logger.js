@@ -10,22 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-System.register("angular2-logger/app/core/iLogger", [], function(exports_1, context_1) {
+System.register("angular2-logger/app/core/iLogger", [], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     return {
-        setters:[],
-        execute: function() {
+        setters: [],
+        execute: function () {
         }
-    }
+    };
 });
-System.register("angular2-logger/app/core/level", [], function(exports_2, context_2) {
+System.register("angular2-logger/app/core/level", [], function (exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
     var Level;
     return {
-        setters:[],
-        execute: function() {
+        setters: [],
+        execute: function () {
             (function (Level) {
                 Level[Level["OFF"] = 0] = "OFF";
                 Level[Level["ERROR"] = 1] = "ERROR";
@@ -36,22 +36,22 @@ System.register("angular2-logger/app/core/level", [], function(exports_2, contex
             })(Level || (Level = {}));
             exports_2("Level", Level);
         }
-    }
+    };
 });
-System.register("angular2-logger/app/core/logger", ["@angular/core", "angular2-logger/app/core/level"], function(exports_3, context_3) {
+System.register("angular2-logger/app/core/logger", ["@angular/core", "angular2-logger/app/core/level"], function (exports_3, context_3) {
     "use strict";
     var __moduleName = context_3 && context_3.id;
-    var core_1, level_1;
-    var Options, DEFAULT_OPTIONS, Logger;
+    var core_1, level_1, Options, DEFAULT_OPTIONS, Logger;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
             function (level_1_1) {
                 level_1 = level_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             Options = (function () {
                 function Options() {
                 }
@@ -123,14 +123,14 @@ System.register("angular2-logger/app/core/logger", ["@angular/core", "angular2-l
                 Logger.prototype.group = function () {
                     var args = [];
                     for (var _i = 0; _i < arguments.length; _i++) {
-                        args[_i - 0] = arguments[_i];
+                        args[_i] = arguments[_i];
                     }
                     (console && console.group) && console.group.apply(console, arguments);
                 };
                 Logger.prototype.groupEnd = function () {
                     var args = [];
                     for (var _i = 0; _i < arguments.length; _i++) {
-                        args[_i - 0] = arguments[_i];
+                        args[_i] = arguments[_i];
                     }
                     (console && console.groupEnd) && console.groupEnd.apply(console, arguments);
                 };
@@ -159,37 +159,38 @@ System.register("angular2-logger/app/core/logger", ["@angular/core", "angular2-l
                     enumerable: true,
                     configurable: true
                 });
-                Logger = __decorate([
-                    core_1.Injectable(),
-                    __param(0, core_1.Optional()), 
-                    __metadata('design:paramtypes', [Options])
-                ], Logger);
                 return Logger;
             }());
+            Logger = __decorate([
+                core_1.Injectable(),
+                __param(0, core_1.Optional()),
+                __metadata("design:paramtypes", [Options])
+            ], Logger);
             exports_3("Logger", Logger);
         }
-    }
+    };
 });
-System.register("angular2-logger/core", ["angular2-logger/app/core/level", "angular2-logger/app/core/logger"], function(exports_4, context_4) {
+System.register("angular2-logger/core", ["angular2-logger/app/core/level", "angular2-logger/app/core/logger"], function (exports_4, context_4) {
     "use strict";
     var __moduleName = context_4 && context_4.id;
     function exportStar_1(m) {
         var exports = {};
-        for(var n in m) {
+        for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
         exports_4(exports);
     }
     return {
-        setters:[
+        setters: [
             function (level_2_1) {
                 exportStar_1(level_2_1);
             },
             function (logger_1_1) {
                 exportStar_1(logger_1_1);
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
         }
-    }
+    };
 });
 //# sourceMappingURL=angular2-logger.js.map

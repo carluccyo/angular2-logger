@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var level_1 = require("./level");
 var Options = (function () {
@@ -86,14 +87,14 @@ var Logger = (function () {
     Logger.prototype.group = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
+            args[_i] = arguments[_i];
         }
         (console && console.group) && console.group.apply(console, arguments);
     };
     Logger.prototype.groupEnd = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
+            args[_i] = arguments[_i];
         }
         (console && console.groupEnd) && console.groupEnd.apply(console, arguments);
     };
@@ -122,12 +123,12 @@ var Logger = (function () {
         enumerable: true,
         configurable: true
     });
-    Logger = __decorate([
-        core_1.Injectable(),
-        __param(0, core_1.Optional()), 
-        __metadata('design:paramtypes', [Options])
-    ], Logger);
     return Logger;
 }());
+Logger = __decorate([
+    core_1.Injectable(),
+    __param(0, core_1.Optional()),
+    __metadata("design:paramtypes", [Options])
+], Logger);
 exports.Logger = Logger;
 //# sourceMappingURL=logger.js.map

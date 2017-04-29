@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Level;
 (function (Level) {
     Level[Level["OFF"] = 0] = "OFF";
     Level[Level["ERROR"] = 1] = "ERROR";
@@ -6,6 +8,5 @@
     Level[Level["INFO"] = 3] = "INFO";
     Level[Level["DEBUG"] = 4] = "DEBUG";
     Level[Level["LOG"] = 5] = "LOG";
-})(exports.Level || (exports.Level = {}));
-var Level = exports.Level;
+})(Level = exports.Level || (exports.Level = {}));
 //# sourceMappingURL=level.js.map
